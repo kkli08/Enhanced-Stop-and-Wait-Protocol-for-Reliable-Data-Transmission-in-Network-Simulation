@@ -1,0 +1,20 @@
+compile	          = "testprotocol.c"
+
+bandwidth        = 64 Kbps
+
+minmessagesize   = 4000 bytes
+maxmessagesize   = 32768 bytes
+
+messagerate      = 4000 ms
+propagationdelay = 750 ms
+
+probframeloss	 = 0
+probframecorrupt = 0
+
+host edmonton { x= 50 , y= 50, link to calgary, link to router1 }
+host calgary { x= 400, y= 50, link to beijing } 
+host wuhan { x= 50, y= 350, link to router2 }
+host beijing { x= 400, y= 350 }
+
+router router1 { x= 100, y= 150, link to wuhan }
+router router2 { x= 200, y= 250, link to beijing }
